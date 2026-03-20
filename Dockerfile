@@ -18,9 +18,8 @@ RUN git clone https://github.com/NVIDIA/personaplex.git /app/personaplex
 
 WORKDIR /app/personaplex
 
-# Instalar los requerimientos de Python del repositorio
-# (Asegura tener torch, torchaudio, transformers, etc)
-RUN pip install --no-cache-dir -r requirements.txt
+# Instalar PersonaPlex y Moshi del repositorio (que trae dependencias atadas)
+RUN pip install --no-cache-dir moshi/.
 
 # Instalar el SDK de RunPod para Serverless
 RUN pip install runpod pydub
